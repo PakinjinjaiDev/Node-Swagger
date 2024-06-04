@@ -58,7 +58,20 @@ const register = async (req, res) => {
   };
 //อัพเดทข้อมูล
 
+//แสดงผลข้อมูล
+  const getallUsers = async (req, res ) => {
+    try {
+      const users = await userModel.find({});
+      const userMap = {};
+      users.forEach((user) => {
+        userMap[user._id] = user;
+      });
+      return res.status(200).json(userMap);
+    } catch (error) {
+      return res.status(400).json({ message: "ไม่พบข้อมูลผู้ใช้งาน", error : error });
+    }
+  }
+
   module.exports = {
-        register,
-        login,
+  register,login,getallUsers
   };

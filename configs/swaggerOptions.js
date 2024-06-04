@@ -3,7 +3,7 @@ module.exports = {
     swaggerDefinition: {
       openapi: "3.0.0",
       info: {
-        title: "Informations Engineering API",
+        title: "Pakin-API",
         version: "1.0.0",
         description: "API Documentation for User API",
       },
